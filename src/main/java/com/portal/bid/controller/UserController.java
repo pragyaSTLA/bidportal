@@ -6,6 +6,8 @@ import com.portal.bid.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +20,6 @@ import java.sql.SQLOutput;
 public class UserController {
     @Autowired
     private UserService userService;
-
-
     @PostMapping("/register")
     public ResponseEntity<String> saveUser(@RequestBody User u){
         System.out.println("saving user");
