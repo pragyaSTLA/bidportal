@@ -12,9 +12,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/opportunities")
 public class FormController{
+
+
+
         @Autowired
         private OpportunityServiceImp opportunityService;
 
+         @CrossOrigin(origins = "http://localhost:3000")
         @PostMapping
         public ResponseEntity<Form> createOpportunity(@RequestBody Form opportunity) {
 
@@ -22,12 +26,14 @@ public class FormController{
             return ResponseEntity.ok(savedOpportunity);
         }
 
+         @CrossOrigin(origins = "http://localhost:3000")
         @GetMapping
         public ResponseEntity<List<Form>> getAllOpportunities() {
             List<Form> opportunities = opportunityService.getAllOpportunities();
             return ResponseEntity.ok(opportunities);
         }
 
+       @CrossOrigin(origins = "http://localhost:3000")
         @GetMapping("/{id}")
         public ResponseEntity<Form> getOpportunityById(@PathVariable Long id) {
             Form opportunity = opportunityService.getOpportunityById(id);
