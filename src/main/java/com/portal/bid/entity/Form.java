@@ -129,14 +129,14 @@ public class Form {
 
     @JsonProperty("gmPercentage")
     @Column(name = "gm_percentage")
-    @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "gmPercentage must be a number or percentage (e.g., 50 or 50.5%)")
+//    @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "gmPercentage must be a number or percentage (e.g., 50 or 50.5%)")
     private String gmPercentage;
 
 
 
     @JsonProperty("probability")
     @Column(name = "probability")
-    @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "Probability must be a number or percentage (e.g., 50 or 50.5%)")
+//    @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "Probability must be a number or percentage (e.g., 50 or 50.5%)")
     private String probability;
 
 
@@ -146,22 +146,22 @@ public class Form {
 
     @JsonProperty("primaryOwner")
     @Column(name = "primary_owner")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "primary Owner must contain only alphabetic characters")
+//    @Pattern(regexp = "^[A-Za-z]+$", message = "primary Owner must contain only alphabetic characters")
     private String primaryOwner;
 
     @JsonProperty("leaderForAircover")
     @Column(name = "leader_for_aircover")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Leader for aircover must contain only alphabetic characters")
+//    @Pattern(regexp = "^[A-Za-z]+$", message = "Leader for aircover must contain only alphabetic characters")
     private String leaderForAircover;
 
     @JsonProperty("source")
     @Column(name = "source")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Source must contain only alphabetic characters")
+//    @Pattern(regexp = "^[A-Za-z]+$", message = "Source must contain only alphabetic characters")
     private String source;
 
     @JsonProperty("sourcePerson")
     @Column(name = "source_person")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Source person must contain only alphabetic characters")
+//    @Pattern(regexp = "^[A-Za-z]+$", message = "Source person must contain only alphabetic characters")
     private String sourcePerson;
 
 
