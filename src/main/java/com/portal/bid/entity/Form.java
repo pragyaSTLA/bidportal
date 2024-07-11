@@ -1,8 +1,9 @@
 package com.portal.bid.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Pattern;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -128,11 +129,16 @@ public class Form {
 
     @JsonProperty("gmPercentage")
     @Column(name = "gm_percentage")
+    @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "gmPercentage must be a number or percentage (e.g., 50 or 50.5%)")
     private String gmPercentage;
+
+
 
     @JsonProperty("probability")
     @Column(name = "probability")
+    @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "Probability must be a number or percentage (e.g., 50 or 50.5%)")
     private String probability;
+
 
     @JsonProperty("salesRole")
     @Column(name = "sales_role")
@@ -140,19 +146,24 @@ public class Form {
 
     @JsonProperty("primaryOwner")
     @Column(name = "primary_owner")
+    @Pattern(regexp = "^[A-Za-z]+$", message = "primary Owner must contain only alphabetic characters")
     private String primaryOwner;
 
     @JsonProperty("leaderForAircover")
     @Column(name = "leader_for_aircover")
+    @Pattern(regexp = "^[A-Za-z]+$", message = "Leader for aircover must contain only alphabetic characters")
     private String leaderForAircover;
 
     @JsonProperty("source")
     @Column(name = "source")
+    @Pattern(regexp = "^[A-Za-z]+$", message = "Source must contain only alphabetic characters")
     private String source;
 
     @JsonProperty("sourcePerson")
     @Column(name = "source_person")
+    @Pattern(regexp = "^[A-Za-z]+$", message = "Source person must contain only alphabetic characters")
     private String sourcePerson;
+
 
     @JsonProperty("leadReceivedDate")
     @Column(name = "lead_received_date")
@@ -183,4 +194,349 @@ public class Form {
     private String scopeOfWork;
 
     // Getters and Setters
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPriorityBid() {
+        return priorityBid;
+    }
+
+    public void setPriorityBid(String priorityBid) {
+        this.priorityBid = priorityBid;
+    }
+
+    public String getObFy() {
+        return obFy;
+    }
+
+    public void setObFy(String obFy) {
+        this.obFy = obFy;
+    }
+
+    public String getObQtr() {
+        return obQtr;
+    }
+
+    public void setObQtr(String obQtr) {
+        this.obQtr = obQtr;
+    }
+
+    public String getObMmm() {
+        return obMmm;
+    }
+
+    public void setObMmm(String obMmm) {
+        this.obMmm = obMmm;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public String getOpportunity() {
+        return opportunity;
+    }
+
+    public void setOpportunity(String opportunity) {
+        this.opportunity = opportunity;
+    }
+
+    public String getOpportunityType() {
+        return opportunityType;
+    }
+
+    public void setOpportunityType(String opportunityType) {
+        this.opportunityType = opportunityType;
+    }
+
+    public BigDecimal getAmountInrCrMax() {
+        return amountInrCrMax;
+    }
+
+    public void setAmountInrCrMax(BigDecimal amountInrCrMax) {
+        this.amountInrCrMax = amountInrCrMax;
+    }
+
+    public BigDecimal getAmountInrCrMin() {
+        return amountInrCrMin;
+    }
+
+    public void setAmountInrCrMin(BigDecimal amountInrCrMin) {
+        this.amountInrCrMin = amountInrCrMin;
+    }
+
+    public BigDecimal getRevInObQtr() {
+        return revInObQtr;
+    }
+
+    public void setRevInObQtr(BigDecimal revInObQtr) {
+        this.revInObQtr = revInObQtr;
+    }
+
+    public BigDecimal getRevInObQtrPlus1() {
+        return revInObQtrPlus1;
+    }
+
+    public void setRevInObQtrPlus1(BigDecimal revInObQtrPlus1) {
+        this.revInObQtrPlus1 = revInObQtrPlus1;
+    }
+
+    public String getBusinessUnit() {
+        return businessUnit;
+    }
+
+    public void setBusinessUnit(String businessUnit) {
+        this.businessUnit = businessUnit;
+    }
+
+    public String getIndustrySegment() {
+        return industrySegment;
+    }
+
+    public void setIndustrySegment(String industrySegment) {
+        this.industrySegment = industrySegment;
+    }
+
+    public String getPrimaryOfferingSegment() {
+        return primaryOfferingSegment;
+    }
+
+    public void setPrimaryOfferingSegment(String primaryOfferingSegment) {
+        this.primaryOfferingSegment = primaryOfferingSegment;
+    }
+
+    public String getSecondaryOfferingSegment() {
+        return secondaryOfferingSegment;
+    }
+
+    public void setSecondaryOfferingSegment(String secondaryOfferingSegment) {
+        this.secondaryOfferingSegment = secondaryOfferingSegment;
+    }
+
+    public String getPartQuarter() {
+        return partQuarter;
+    }
+
+    public void setPartQuarter(String partQuarter) {
+        this.partQuarter = partQuarter;
+    }
+
+    public String getPartMonth() {
+        return partMonth;
+    }
+
+    public void setPartMonth(String partMonth) {
+        this.partMonth = partMonth;
+    }
+
+    public Integer getProjectTenureMonths() {
+        return projectTenureMonths;
+    }
+
+    public void setProjectTenureMonths(Integer projectTenureMonths) {
+        this.projectTenureMonths = projectTenureMonths;
+    }
+
+    public BigDecimal getEstCapexInrCr() {
+        return estCapexInrCr;
+    }
+
+    public void setEstCapexInrCr(BigDecimal estCapexInrCr) {
+        this.estCapexInrCr = estCapexInrCr;
+    }
+
+    public BigDecimal getEstOpexInrCr() {
+        return estOpexInrCr;
+    }
+
+    public void setEstOpexInrCr(BigDecimal estOpexInrCr) {
+        this.estOpexInrCr = estOpexInrCr;
+    }
+
+    public Integer getOpexTenureMonths() {
+        return opexTenureMonths;
+    }
+
+    public void setOpexTenureMonths(Integer opexTenureMonths) {
+        this.opexTenureMonths = opexTenureMonths;
+    }
+
+    public String getDealStatus() {
+        return dealStatus;
+    }
+
+    public void setDealStatus(String dealStatus) {
+        this.dealStatus = dealStatus;
+    }
+
+    public String getGoNoGoStatus() {
+        return goNoGoStatus;
+    }
+
+    public void setGoNoGoStatus(String goNoGoStatus) {
+        this.goNoGoStatus = goNoGoStatus;
+    }
+
+    public LocalDate getGoNoGoDate() {
+        return goNoGoDate;
+    }
+
+    public void setGoNoGoDate(LocalDate goNoGoDate) {
+        this.goNoGoDate = goNoGoDate;
+    }
+
+    public String getSolutionReadiness() {
+        return solutionReadiness;
+    }
+
+    public void setSolutionReadiness(String solutionReadiness) {
+        this.solutionReadiness = solutionReadiness;
+    }
+
+    public String getCustomerAlignment() {
+        return customerAlignment;
+    }
+
+    public void setCustomerAlignment(String customerAlignment) {
+        this.customerAlignment = customerAlignment;
+    }
+
+    public String getStlPreparedness() {
+        return stlPreparedness;
+    }
+
+    public void setStlPreparedness(String stlPreparedness) {
+        this.stlPreparedness = stlPreparedness;
+    }
+
+    public String getReadinessAsPerTimeline() {
+        return readinessAsPerTimeline;
+    }
+
+    public void setReadinessAsPerTimeline(String readinessAsPerTimeline) {
+        this.readinessAsPerTimeline = readinessAsPerTimeline;
+    }
+
+    public String getGmPercentage() {
+        return gmPercentage;
+    }
+
+    public void setGmPercentage(String gmPercentage) {
+        this.gmPercentage = gmPercentage;
+    }
+
+    public @Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "Probability must be a number or percentage (e.g., 50 or 50.5%)") String getProbability() {
+        return probability;
+    }
+
+    public void setProbability(@Pattern(regexp = "^\\d+(\\.\\d+)?%?$", message = "Probability must be a number or percentage (e.g., 50 or 50.5%)") String probability) {
+        this.probability = probability;
+    }
+
+    public String getSalesRole() {
+        return salesRole;
+    }
+
+    public void setSalesRole(String salesRole) {
+        this.salesRole = salesRole;
+    }
+
+    public @Pattern(regexp = "^[A-Za-z]+$", message = "primary Owner must contain only alphabetic characters") String getPrimaryOwner() {
+        return primaryOwner;
+    }
+
+    public void setPrimaryOwner(@Pattern(regexp = "^[A-Za-z]+$", message = "primary Owner must contain only alphabetic characters") String primaryOwner) {
+        this.primaryOwner = primaryOwner;
+    }
+
+    public @Pattern(regexp = "^[A-Za-z]+$", message = "Leader for aircover must contain only alphabetic characters") String getLeaderForAircover() {
+        return leaderForAircover;
+    }
+
+    public void setLeaderForAircover(@Pattern(regexp = "^[A-Za-z]+$", message = "Leader for aircover must contain only alphabetic characters") String leaderForAircover) {
+        this.leaderForAircover = leaderForAircover;
+    }
+
+    public @Pattern(regexp = "^[A-Za-z]+$", message = "Source must contain only alphabetic characters") String getSource() {
+        return source;
+    }
+
+    public void setSource(@Pattern(regexp = "^[A-Za-z]+$", message = "Source must contain only alphabetic characters") String source) {
+        this.source = source;
+    }
+
+    public @Pattern(regexp = "^[A-Za-z]+$", message = "Source person must contain only alphabetic characters") String getSourcePerson() {
+        return sourcePerson;
+    }
+
+    public void setSourcePerson(@Pattern(regexp = "^[A-Za-z]+$", message = "Source person must contain only alphabetic characters") String sourcePerson) {
+        this.sourcePerson = sourcePerson;
+    }
+
+    public LocalDate getLeadReceivedDate() {
+        return leadReceivedDate;
+    }
+
+    public void setLeadReceivedDate(LocalDate leadReceivedDate) {
+        this.leadReceivedDate = leadReceivedDate;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public LocalDate getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(LocalDate submissionDate) {
+        this.submissionDate = submissionDate;
+    }
+
+    public LocalDate getDecisionDate() {
+        return decisionDate;
+    }
+
+    public void setDecisionDate(LocalDate decisionDate) {
+        this.decisionDate = decisionDate;
+    }
+
+    public String getAdditionalRemarks() {
+        return additionalRemarks;
+    }
+
+    public void setAdditionalRemarks(String additionalRemarks) {
+        this.additionalRemarks = additionalRemarks;
+    }
+
+    public String getTenderNo() {
+        return tenderNo;
+    }
+
+    public void setTenderNo(String tenderNo) {
+        this.tenderNo = tenderNo;
+    }
+
+    public String getScopeOfWork() {
+        return scopeOfWork;
+    }
+
+    public void setScopeOfWork(String scopeOfWork) {
+        this.scopeOfWork = scopeOfWork;
+    }
 }
