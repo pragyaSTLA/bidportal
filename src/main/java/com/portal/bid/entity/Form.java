@@ -15,39 +15,39 @@ public class Form {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonProperty("priorityBid")
+//    @JsonProperty("priorityBid")
     @Column(name = "priority_bid")
     private String priorityBid;
 
-    @JsonProperty("obFy")
+//    @JsonProperty("obFy")
     @Column(name = "ob_fy")
     private String obFy;
 
-    @JsonProperty("obQtr")
+//    @JsonProperty("obQtr")
     @Column(name = "ob_qtr")
     private String obQtr;
 
-    @JsonProperty("obMmm")
+//    @JsonProperty("obMmm")
     @Column(name = "ob_mmm")
     private String obMmm;
 
-    @JsonProperty("priority")
+//    @JsonProperty("priority")
     @Column(name = "priority")
     private String priority;
 
-    @JsonProperty("opportunity")
+//    @JsonProperty("opportunity")
     @Column(name = "opportunity")
     private String opportunity;
 
-    @JsonProperty("opportunityType")
+//    @JsonProperty("opportunityType")
     @Column(name = "opportunity_type")
     private String opportunityType;
 
-    @JsonProperty("amountInrCrMax")
+//    @JsonProperty("amountInrCrMax")
     @Column(name = "amount_inr_cr_max")
     private BigDecimal amountInrCrMax;
 
-    @JsonProperty("amountInrCrMin")
+//    @JsonProperty("amountInrCrMin")
     @Column(name = "amount_inr_cr_min")
     private BigDecimal amountInrCrMin;
 
