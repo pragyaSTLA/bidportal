@@ -25,7 +25,8 @@ public class PlanActionController {
 
     @PutMapping("/{id}")
     public ResponseEntity<PlanAction> updatePlan(@PathVariable Long id, @RequestBody PlanAction plan) {
-        if (plan.getUpdatedAt() == null || plan.getUpdatedBy() == null || plan.getAction() == null) {
+        plan.setUpdatedAt(LocalDateTime.now());
+        if (plan.getUpdatedBy() == null || plan.getAction() == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST); // Return 400 Bad Request if validation fails
         }
         PlanAction updatedPlan = planService.updatePlan(id, plan);

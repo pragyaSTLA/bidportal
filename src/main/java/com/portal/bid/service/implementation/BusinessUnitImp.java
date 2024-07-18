@@ -46,6 +46,6 @@ public class BusinessUnitImp implements BusinessUnitService {
 
     @Override
     public BusinessUnit getBusinessUnitById(Long id) {
-        return null;
+        return  businessUnitRepository.findById(id).orElse(null);
     }
 }

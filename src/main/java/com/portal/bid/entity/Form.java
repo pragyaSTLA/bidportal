@@ -101,7 +101,7 @@ public class Form {
 
     @JsonProperty("dealStatus")
     @Column(name = "deal_status")
-    private String dealStatus;
+    private  String dealStatus;
 
     @JsonProperty("goNoGoStatus")
     @Column(name = "go_no_go_status")

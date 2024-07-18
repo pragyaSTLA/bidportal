@@ -1,35 +1,54 @@
 package com.portal.bid.service.implementation;
 
 import com.portal.bid.entity.DealStatus;
+import com.portal.bid.repository.DealStatusRepository;
 import com.portal.bid.service.DealStatusService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DealStatusImp implements DealStatusService {
+    @Autowired
+    private DealStatusRepository dealStatusRepository;
+
     @Override
     public DealStatus createDealStatus(DealStatus dealStatus) {
-        return null;
+        return dealStatusRepository.save(dealStatus);
     }
 
     @Override
     public DealStatus getDealStatusById(Long id) {
-        return null;
+        return dealStatusRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<DealStatus> getAllDealStatus() {
-        return List.of();
+        return dealStatusRepository.findAll();
     }
 
     @Override
     public DealStatus updateDealStatus(Long id, DealStatus dealStatus) {
+        Optional<DealStatus> existingDealStatus = dealStatusRepository.findById(id);
+        if (existingDealStatus.isPresent()) {
+            DealStatus updatedDealStatus = existingDealStatus.get();
+            updatedDealStatus.setDeal_status(dealStatus.getDeal_status());
+            updatedDealStatus.setStatus(dealStatus.getStatus());
+            updatedDealStatus.setUpdatedAt(LocalDateTime.now()); // Set the updatedAt timestamp
+            return dealStatusRepository.save(updatedDealStatus);
+        }
         return null;
     }
 
     @Override
     public boolean deleteDealStatus(Long id) {
+        if (dealStatusRepository.existsById(id)) {
+            dealStatusRepository.deleteById(id);
+            return true;
+        }
         return false;
     }
 }
