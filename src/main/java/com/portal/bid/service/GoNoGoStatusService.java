@@ -7,7 +7,7 @@ import java.util.List;
 public interface GoNoGoStatusService {
     GoNoGoStatus createEntry(GoNoGoStatus entry);
 
-    
+
 
     GoNoGoStatus updateEntry(GoNoGoStatus entry, Long id);
 
