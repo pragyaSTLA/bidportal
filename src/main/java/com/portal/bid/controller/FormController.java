@@ -21,7 +21,7 @@ public class FormController{
 
 
         @Autowired
-        private OpportunityServiceImp opportunityService;
+        private OpportunityService opportunityService;
 
          @CrossOrigin(origins = "http://localhost:3000")
         @PostMapping

@@ -17,7 +17,7 @@ public class Fy {
 
     @Column(name="created_at",nullable = false)
     private LocalDateTime createdAt;
-    @Column(name="created_at")
+    @Column(name="updaed_at")
     private LocalDateTime updatedAt;
 
     @Column(name="created_by",nullable = false)
